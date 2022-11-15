@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">تطبيق بلال للطب البديل</string>
-    <string name="title_activity_main">تطبيق بلال للطب البديل</string>
-    <string name="prof">تحت إشراف الاستاذ الفاضل عباس</string>
+    <string name="app_name">تطبيق مدرسة الارقم للطب البديل</string>
+    <string name="title_activity_main">تطبيق مدرسة الارقم للطب البديل</string>
+    <string name="prof">تحت إشراف الاستاذ الفاضل خالد</string>
     <string name="student">بلال ارسلان خليفي التهامي</string>
     <string name="school">مدرسة الارقم الخاصة</string>
     <string name="title">أنواع الطب البديل</string>

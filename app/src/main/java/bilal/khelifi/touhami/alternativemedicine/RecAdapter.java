@@ -1,5 +1,7 @@
 package bilal.khelifi.touhami.alternativemedicine;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,9 +37,15 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.RecViewHolder> {
         holder.bind(item);
 
         holder.itemView.setOnClickListener(v -> {
-            boolean expanded = item.isExpanded();
-            item.setExpanded(!expanded);
-            notifyItemChanged(position);
+            //  boolean expanded = item.isExpanded();
+            //item.setExpanded(!expanded);
+            //notifyItemChanged(position);
+
+            Intent myIntent = new Intent(holder.context, ContentActivity.class);
+            myIntent.putExtra("content", item.getContent());
+            myIntent.putExtra("title", item.getTitle());
+            myIntent.putExtra("img", item.getImg());
+            holder.context.startActivity(myIntent);
         });
     }
 
@@ -48,6 +56,7 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.RecViewHolder> {
 
     public class RecViewHolder extends RecyclerView.ViewHolder {
 
+        private final Context context;
         private TextView title;
         private TextView content;
         private View subItem;
@@ -55,16 +64,24 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.RecViewHolder> {
         public RecViewHolder(View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.item_title);
-            content = itemView.findViewById(R.id.sub_item_content);
-            subItem = itemView.findViewById(R.id.sub_item);
+          //  content = itemView.findViewById(R.id.sub_item_content);
+          //  subItem = itemView.findViewById(R.id.sub_item);
+            this.context = itemView.getContext();
         }
 
         private void bind(MyListItem item) {
-            Log.e("RecyclerViewH", "bind: "+item );
-            boolean expanded = item.isExpanded();
-            subItem.setVisibility(expanded ? View.VISIBLE : View.GONE);
+            // boolean expanded = item.isExpanded();
+            //subItem.setVisibility(expanded ? View.VISIBLE : View.GONE);
             title.setText(item.getTitle());
-            content.setText(item.getContent());
+            //  content.setText(item.getContent());
+        }
+
+        public TextView getContent() {
+            return content;
+        }
+
+        public void setContent(TextView content) {
+            this.content = content;
         }
     }
 }

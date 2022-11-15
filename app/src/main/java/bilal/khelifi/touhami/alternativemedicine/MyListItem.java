@@ -7,10 +7,12 @@ public class MyListItem {
     private String title, content;
     // State of the item
     private boolean expanded;
+    private int img;
 
-    public MyListItem(String title, String content) {
+    public MyListItem(String title, String content, int img) {
         this.title = title;
         this.content = content;
+        this.img = img;
     }
 
     public String getTitle() {
@@ -40,6 +42,14 @@ public class MyListItem {
     @NonNull
     @Override
     public String toString() {
-        return title+" :  "+content;
+        return title + " :  " + content;
+    }
+
+    public int getImg() {
+        return img;
+    }
+
+    public void setImg(int img) {
+        this.img = img;
     }
 }

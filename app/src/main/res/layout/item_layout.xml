@@ -25,19 +25,4 @@
         android:textSize="22sp"
         tools:text="Léon: The Professional" />
 
-    <LinearLayout
-        android:id="@+id/sub_item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/sub_item_content"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            tools:text="Genre:  Crime, Drama, Thriller" />
-    </LinearLayout>
 </LinearLayout>
